@@ -1,0 +1,5 @@
+pip-tools
+pytest
+pyyaml
+flask
+waitress
