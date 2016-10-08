@@ -22,7 +22,7 @@ class Configuration:
     def __init__(self, filename):
         with open(filename, 'rt', encoding='utf-8') as f:
             data = yaml.load(f)
-        (self.host, port) = data['listen'].split(':')
+        (self.host, port) = data.get('listen', 'localhost:8000').split(':')
         self.port = int(port)
         self.routes = [
             Route(raw_spec, options)
