@@ -12,7 +12,7 @@ class Route:
         self.command = options['command']
 
     def register_on(self, app):
-        @app.route(self.url, methods=[self.method])
+        @app.route(self.url, methods=[self.method], endpoint=self.name)
         def view():
             out = subprocess.check_output(self.command, shell=True)
             return out

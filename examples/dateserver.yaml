@@ -2,3 +2,5 @@ listen: localhost:8000
 routes:
   GET /now:
     command: date
+  GET /uptime:
+    command: uptime
